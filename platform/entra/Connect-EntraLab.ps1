@@ -11,9 +11,17 @@ param(
     [switch]$UseDeviceAuthentication
 )
 $ErrorActionPreference = 'Stop'
+$localConfigPath = Join-Path $PSScriptRoot 'tenant.local.json'
+if (-not $TenantId -and (Test-Path -LiteralPath $localConfigPath)) {
+    $localConfig = Get-Content -Raw -LiteralPath $localConfigPath | ConvertFrom-Json
+    $TenantId = $localConfig.tenant_id
+}
+if (-not $TenantId) {
+    throw 'Provide -TenantId or create the gitignored platform/entra/tenant.local.json file.'
+}
 $scopes = @('User.Read','Organization.Read.All')
 $connect = @{ Scopes = $scopes; NoWelcome = $true }
-if ($TenantId) { $connect.TenantId = $TenantId }
+$connect.TenantId = $TenantId
 if ($UseDeviceAuthentication) { $connect.UseDeviceAuthentication = $true }
 Connect-MgGraph @connect
 $context = Get-MgContext
