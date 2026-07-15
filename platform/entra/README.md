@@ -1,0 +1,13 @@
+# Authorized Entra Connection
+
+Evidence before execution: `DESIGNED FOR ENTRA`. Successful read-only discovery in your approved tenant: `IMPLEMENTED IN AUTHORIZED TENANT/LAB`.
+
+Prerequisites: PowerShell 7, the installed Microsoft Graph modules, an Entra account authorized to consent to `User.Read` and `Organization.Read.All`, and permission from the tenant owner.
+
+```powershell
+pwsh ./platform/entra/Connect-EntraLab.ps1
+```
+
+If you know the tenant ID, use `-TenantId`. The script performs discovery only and writes sanitized output below gitignored `generated/authorized-entra/`. Inspect that output before sharing it. Do not commit tenant IDs, account names, access tokens, or exported directory data.
+
+Advanced PIM, access reviews, entitlement management, Identity Protection, and Conditional Access depend on tenant roles and licenses. They must be discovered and approved separately before any mutation adapter is enabled.

@@ -1,0 +1,7 @@
+{
+  "classification": "SYNTHETIC DATA - IMPLEMENTED LOCALLY",
+  "workers": [
+    {"person_id":"NSH-1001","first_name":"Jasmine","last_name":"Reed","department":"Finance","employment_type":"Employee","manager_id":"NSH-9001","active":true,"end_date":null},
+    {"person_id":"NSH-2001","first_name":"Evan","last_name":"Cole","department":"Engineering","employment_type":"Contractor","manager_id":"NSH-9002","active":true,"end_date":"2025-12-31"}
+  ]
+}

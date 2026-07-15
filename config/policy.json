@@ -1,0 +1,9 @@
+{
+  "evidence": "IMPLEMENTED LOCALLY",
+  "departments": {
+    "Finance": ["grp-finance-base", "ent-finance-ledger"],
+    "Engineering": ["grp-engineering-base", "ent-engineering-repo"]
+  },
+  "toxic_combinations": [["ent-finance-ledger", "ent-engineering-repo"]],
+  "contractor_max_days": 365
+}

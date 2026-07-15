@@ -1,0 +1,9 @@
+{
+  "scenario_id": "entra-jasmine-mover-v1",
+  "seed": 41001,
+  "logical_time": "2026-01-15T15:00:00Z",
+  "person_id": "NSH-1001",
+  "from_department": "Finance",
+  "to_department": "Engineering",
+  "suppressed_removal": "ent-finance-ledger"
+}
