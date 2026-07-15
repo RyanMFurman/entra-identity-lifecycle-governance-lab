@@ -13,7 +13,16 @@ $connect = @{ Scopes = $scopes; NoWelcome = $true }
 if ($TenantId) { $connect.TenantId = $TenantId }
 Connect-MgGraph @connect
 $context = Get-MgContext
-$organizationResponse = Invoke-MgGraphRequest -Method GET -Uri 'https://graph.microsoft.com/v1.0/organization?$select=id,displayName,verifiedDomains,assignedPlans'
+try {
+    $organizationResponse = Invoke-MgGraphRequest -Method GET -Uri 'https://graph.microsoft.com/v1.0/organization?$select=id,displayName,verifiedDomains,assignedPlans'
+}
+catch {
+    if ($_.Exception.Message -match 'not supported for MSA accounts') {
+        Disconnect-MgGraph | Out-Null
+        throw 'A personal Microsoft account was selected. Find the Directory (tenant) ID in Microsoft Entra ID > Overview, then rerun this script with -TenantId. Sign in with an account that exists in or is authorized for that directory.'
+    }
+    throw
+}
 $organization = @($organizationResponse.value)[0]
 $result = [ordered]@{
     evidence_classification = 'IMPLEMENTED IN AUTHORIZED TENANT/LAB'

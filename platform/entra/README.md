@@ -10,4 +10,6 @@ pwsh ./platform/entra/Connect-EntraLab.ps1
 
 If you know the tenant ID, use `-TenantId`. The script performs discovery only and writes sanitized output below gitignored `generated/authorized-entra/`. Inspect that output before sharing it. Do not commit tenant IDs, account names, access tokens, or exported directory data.
 
+If Graph reports that the organization API is unsupported for an MSA account, the personal Microsoft account was authenticated outside an Entra directory context. In the Azure portal, open **Microsoft Entra ID > Overview**, copy the **Tenant ID**, disconnect the current Graph session, and rerun with `-TenantId`. An Azure subscription associated only with a personal account is not by itself sufficient for organization-level Microsoft Graph queries.
+
 Advanced PIM, access reviews, entitlement management, Identity Protection, and Conditional Access depend on tenant roles and licenses. They must be discovered and approved separately before any mutation adapter is enabled.
