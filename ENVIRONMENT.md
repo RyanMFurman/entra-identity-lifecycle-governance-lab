@@ -31,9 +31,9 @@ Assessment host: Windows 11 Home, 64-bit
 
 | Capability | Status |
 |---|---|
-| Authorized Microsoft Entra tenant | Unverified |
-| Entra license level | Unverified |
-| Microsoft Graph permissions | Unverified |
+| Authorized Microsoft Entra tenant | Verified on 2026-07-15 |
+| Entra license level | Microsoft Entra ID Free; no assigned premium plans discovered |
+| Microsoft Graph permissions | Read-only discovery and delegated user/group lab write scopes verified |
 | Azure subscription | Unverified |
 
 The absence of local tools or environment-variable indicators is not proof that access does not exist. No authentication was attempted during assessment.
@@ -51,4 +51,4 @@ Local mode will use deterministic synthetic source feeds, SQLite mutable state, 
 
 ## Evidence limitations
 
-No policy, identity, application, role, or integration has been deployed to Microsoft Entra. Architecture artifacts are `DESIGNED FOR ENTRA`. Future local automation can be labeled `IMPLEMENTED LOCALLY` only after execution and testing. Tenant operations can be labeled `IMPLEMENTED IN AUTHORIZED TENANT/LAB` only after approved execution and post-change verification.
+Three disabled synthetic users, two synthetic security groups, baseline membership, and the reversible mover scenario were deployed and verified in the authorized tenant. Those specific operations are `IMPLEMENTED IN AUTHORIZED TENANT/LAB`. Conditional Access, PIM, access reviews, entitlement management, application integration, and workload-identity operations remain `DESIGNED FOR ENTRA` or `FUTURE PRODUCTION VALIDATION`.

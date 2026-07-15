@@ -21,3 +21,7 @@
 - The local MVP is not a complete implementation of every Microsoft Entra feature described in the roadmap; Conditional Access deployment, PIM, access packages, SSO, SCIM, and workload-identity operations require later authorized validation.
 
 The repository must not be described as complete until the Phase 10 clean-room test passes.
+
+## Authorized tenant validation
+
+On 2026-07-15, read-only capability discovery succeeded in an authorized Microsoft Entra ID Free tenant. The reversible authorized lab then created three disabled synthetic `LAB-NSH` users and two synthetic security groups. The live mover scenario created a Finance/Engineering membership conflict, detected `ENTRA-SOD-001`, removed the stale Finance membership, and verified the resulting compliant state. Tenant identifiers and object IDs remain only in gitignored local output.

@@ -21,3 +21,15 @@ If you know the tenant ID, use `-TenantId`. The script performs discovery only a
 If Graph reports that the organization API is unsupported for an MSA account, the personal Microsoft account was authenticated outside an Entra directory context. In the Azure portal, open **Microsoft Entra ID > Overview**, copy the **Tenant ID**, disconnect the current Graph session, and rerun with `-TenantId`. An Azure subscription associated only with a personal account is not by itself sufficient for organization-level Microsoft Graph queries.
 
 Advanced PIM, access reviews, entitlement management, Identity Protection, and Conditional Access depend on tenant roles and licenses. They must be discovered and approved separately before any mutation adapter is enabled.
+
+## Reversible authorized lab
+
+After read-only discovery succeeds, deploy disabled synthetic users and security groups:
+
+```powershell
+pwsh ./platform/entra/Invoke-AuthorizedEntraLab.ps1 -Action Deploy -UseDeviceAuthentication
+pwsh ./platform/entra/Invoke-AuthorizedEntraLab.ps1 -Action Demo -UseDeviceAuthentication
+pwsh ./platform/entra/Invoke-AuthorizedEntraLab.ps1 -Action Teardown -UseDeviceAuthentication
+```
+
+The deployment is idempotent, creates only `LAB-NSH` objects, stores object identifiers in the gitignored authorized-output directory, and creates no licensed or sign-in-enabled users. The demo intentionally gives Jasmine both Finance and Engineering group membership, detects the conflict, removes Finance membership, and verifies the corrected state.
