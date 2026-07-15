@@ -3,5 +3,5 @@
 $ErrorActionPreference = 'Stop'
 Write-Host 'LOCAL IDENTITY GOVERNANCE SIMULATOR - SYNTHETIC DATA'
 python --version
-python -m automation.lab demo
+& (Join-Path $PSScriptRoot 'run-demo.ps1')
 exit $LASTEXITCODE

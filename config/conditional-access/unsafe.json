@@ -1,0 +1,8 @@
+{
+  "classification": "DESIGNED FOR ENTRA",
+  "policies": [
+    {"name":"CA-UNSAFE-AllUsers","state":"enabled","include_users":["All"],"exclude_users":[],"grant":[],"legacy_auth":"allowed"}
+  ],
+  "trusted_locations": ["north-america","europe","asia","any-vpn"],
+  "emergency_accounts": ["emergency-access-01"]
+}

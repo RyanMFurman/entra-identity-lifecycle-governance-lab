@@ -1,0 +1,7 @@
+{
+  "classification":"DESIGNED FOR ENTRA",
+  "access_packages":[{"name":"Finance Analyst","approval":"manager-and-owner","duration_days":90,"review_frequency_days":90,"justification_required":true}],
+  "review_rules":{"manager_review":true,"resource_owner_review":true,"overdue_days":7,"escalation":"Identity Governance Administrator","deny_on_no_response":true},
+  "privilege":{"default_assignment":"eligible","maximum_activation_hours":4,"approval_required":true,"justification_required":true,"permanent_assignments_allowed":false},
+  "guest":{"sponsor_required":true,"maximum_days":90,"renewal_required":true}
+}

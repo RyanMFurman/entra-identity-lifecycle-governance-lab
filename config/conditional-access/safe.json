@@ -1,0 +1,10 @@
+{
+  "classification": "DESIGNED FOR ENTRA",
+  "policies": [
+    {"name":"CA-001-Admins-MFA","state":"reportOnly","include_roles":["Global Administrator"],"exclude_users":["emergency-access-01"],"grant":["mfa"],"legacy_auth":"blocked"},
+    {"name":"CA-002-AllUsers-MFA","state":"reportOnly","include_users":["All"],"exclude_users":["emergency-access-01"],"grant":["mfa"],"legacy_auth":"blocked"},
+    {"name":"CA-003-Guests-MFA","state":"reportOnly","include_user_types":["Guest"],"exclude_users":["emergency-access-01"],"grant":["mfa"],"legacy_auth":"blocked"}
+  ],
+  "trusted_locations": ["corporate-hq"],
+  "emergency_accounts": ["emergency-access-01"]
+}

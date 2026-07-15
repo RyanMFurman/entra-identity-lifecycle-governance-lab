@@ -1,0 +1,9 @@
+{
+  "classification":"DESIGNED FOR ENTRA",
+  "applications":[
+    {"name":"Northstar Claims Portal","protocol":"OIDC","assignment_required":true,"group_assignment":"grp-claims-users","owners":["app-owner-claims"],"permissions":["User.Read"],"credential_type":"certificate","credential_expires":"2026-11-01"},
+    {"name":"Northstar HR Provisioning","protocol":"SCIM","assignment_required":true,"group_assignment":"grp-hr-provisioning","owners":["app-owner-hr"],"permissions":["User.Read.All"],"credential_type":"certificate","credential_expires":"2026-08-01"},
+    {"name":"Unsafe Ownerless App","protocol":"OIDC","assignment_required":false,"group_assignment":null,"owners":[],"permissions":["Directory.ReadWrite.All"],"credential_type":"secret","credential_expires":"2025-01-01"}
+  ],
+  "high_risk_permissions":["Directory.ReadWrite.All","RoleManagement.ReadWrite.Directory"]
+}

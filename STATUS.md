@@ -6,11 +6,13 @@
 | 1 — Business and identity architecture | Complete | `DESIGNED FOR ENTRA` |
 | 2 — Identity data model and RBAC | Local MVP complete | `IMPLEMENTED LOCALLY` |
 | 3 — JML automation | Primary mover and expired-contractor workflows complete | `IMPLEMENTED LOCALLY` |
-| 4–6 — Authentication, governance, and applications | Architecture scope only | `DESIGNED FOR ENTRA` / `FUTURE PRODUCTION VALIDATION` |
+| 4 — Authentication and Conditional Access | Safe/unsafe specifications and executable validator complete | `IMPLEMENTED LOCALLY` / `DESIGNED FOR ENTRA` |
+| 5 — Identity governance | Access-package, review, guest, and PIM specifications with validator complete | `IMPLEMENTED LOCALLY` / `DESIGNED FOR ENTRA` |
+| 6 — Applications and workload identities | OIDC, SCIM, ownership, permission, and credential-risk validation complete | `IMPLEMENTED LOCALLY` / `DESIGNED FOR ENTRA` |
 | 7 — Automation and validation | Local MVP complete | `IMPLEMENTED LOCALLY` |
 | 8 — Investigation | Primary synthetic investigation complete | `SIMULATED INVESTIGATION` |
-| 9 — Tests and CI | Local MVP complete | `IMPLEMENTED LOCALLY` |
-| 10 — Portfolio polish | Demo scripts and reproducibility evidence complete | Mixed, explicitly labeled |
+| 9 — Tests and CI | Seven tests, expected-exit validation, repository quality checks, and GitHub Actions complete | `IMPLEMENTED LOCALLY` |
+| 10 — Portfolio polish | Plain-English guide, executive reporting, screenshots, video scripts, and reproducibility evidence complete | Mixed, explicitly labeled |
 
 ## Current limitations
 
