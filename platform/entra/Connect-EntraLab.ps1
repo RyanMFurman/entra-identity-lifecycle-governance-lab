@@ -6,11 +6,15 @@ Uses delegated Microsoft Graph scopes and writes only sanitized capability metad
 It does not create, update, or delete tenant objects.
 #>
 [CmdletBinding()]
-param([string]$TenantId)
+param(
+    [string]$TenantId,
+    [switch]$UseDeviceAuthentication
+)
 $ErrorActionPreference = 'Stop'
 $scopes = @('User.Read','Organization.Read.All')
 $connect = @{ Scopes = $scopes; NoWelcome = $true }
 if ($TenantId) { $connect.TenantId = $TenantId }
+if ($UseDeviceAuthentication) { $connect.UseDeviceAuthentication = $true }
 Connect-MgGraph @connect
 $context = Get-MgContext
 try {
